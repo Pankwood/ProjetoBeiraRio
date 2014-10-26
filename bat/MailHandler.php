@@ -1,10 +1,10 @@
 <?php
 
 	//SMTP server settings	
-	$host = "smtp.host.com";
+	$host = "smtp.projetobeirario.com.br";
     $port = "587";
-    $username = "";
-    $password = "";
+    $username = "contato@projetobeirario.com.br";
+    $password = "dan2006";
 	
 	
 	$messageBody = "";
