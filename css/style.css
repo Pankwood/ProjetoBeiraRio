@@ -18,6 +18,7 @@ a[href^="tel:"] {
  text-decoration: none;
 }
 
+
 * {
 	-webkit-text-size-adjust: none;
 }
@@ -721,6 +722,29 @@ footer {
     display: block;
     color: #0052da;
 
+}
+
+
+#toside {
+display: none;
+text-decoration: none;
+position: fixed;
+top: 5px;
+left: 5px;
+overflow: hidden;
+width: 56px;
+height: 56px;
+border: none;
+text-indent: -999px;
+z-index: 20;
+background: url(../images/toside.png) no-repeat left 0;
+transition: 0s ease;
+-o-transition: 0s ease;
+-webkit-transition: 0s ease;
+}
+#toside:hover {
+    outline: none;
+    background-position: right 0;
 }
 
 #toTop {

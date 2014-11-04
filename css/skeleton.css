@@ -43,7 +43,7 @@
     /* Base Grid */
     .container_12 .grid_1			{ width: 60px;  }
     .container_12 .grid_2			{ width: 140px; }
-    .container_12 .grid_3			{ width: 220px; }
+    .container_12 .grid_3			{ width: 450px; }/*Minha alterçao 220*/
     .container_12 .grid_4			{ width: 300px; }
     .container_12 .grid_5			{ width: 380px; }
     .container_12 .grid_6			{ width: 460px; }
