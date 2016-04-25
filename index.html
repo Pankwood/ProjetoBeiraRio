@@ -1,0 +1,317 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Projeto Beira Rio</title>
+		<meta charset="utf-8">
+		<meta name = "format-detection" content = "telephone=no" />
+		<link rel="icon" href="images/favicon.ico">
+		<link rel="shortcut icon" href="images/favicon.ico" />
+		<link rel="stylesheet" href="css/owl.carousel.css">
+		<link rel="stylesheet" href="css/slider.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-migrate-1.1.1.js"></script>
+		<script src="js/script.js"></script>
+		<script src="js/jquery.ui.totop.js"></script>
+		<script src="js/superfish.js"></script>
+		<script src="js/jquery.equalheights.js"></script>
+		<script src="js/jquery.mobilemenu.js"></script>
+		<script src="js/jquery.easing.1.3.js"></script>
+		<script src="js/owl.carousel.js"></script>
+		<script src="js/jquery.flexslider-min.js"></script>
+		<script src="js/kwiks.js"></script>
+		<script>
+			$(document).ready(function(){
+				$().UItoTop({ easingType: 'easeOutQuart' });
+				var owl = $("#owl");
+				owl.owlCarousel({
+					items : 4, //10 items above 1000px browser width
+					itemsDesktop : [995,3], //5 items between 1000px and 901px
+					itemsDesktopSmall : [767, 2], // betweem 900px and 601px
+					itemsTablet: [700, 2], //2 items between 600 and 0
+					itemsMobile : [479, 1], // itemsMobile disabled - inherit from itemsTablet option
+					navigation : true,
+				});
+			})
+			var Main = Main || {};
+			jQuery(window).load(function() {
+				window.responsiveFlag = jQuery('#responsiveFlag').css('display');
+				Main.gallery = new Gallery();
+				jQuery(window).resize(function() {
+					Main.gallery.update();
+				});
+			});
+			function Gallery(){
+				var self = this,
+					container = jQuery('.flexslider'),
+					clone = container.clone( false );
+					this.init = function (){
+						if( responsiveFlag == 'block' ){
+						var slides = container.find('.slides');
+						slides.kwicks({
+							max : 500,
+							spacing : 0
+						}).find('li > a').click(function (){
+							return false;
+						});
+						} else {
+							container.flexslider();
+						}
+					}
+					this.update = function () {
+						var currentState = jQuery('#responsiveFlag').css('display');
+						if(responsiveFlag != currentState) {
+							responsiveFlag = currentState;
+							container.replaceWith(clone);
+							container = clone;
+							clone = container.clone( false );
+							this.init();
+						}
+					}
+				this.init();
+			}
+		</script>
+		<!--[if lt IE 8]>
+		<div style=' clear: both; text-align:center; position: relative;'>
+			<a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+				<img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+			</a>
+		</div>
+		<![endif]-->
+		<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<link rel="stylesheet" media="screen" href="css/ie.css">
+		<![endif]-->
+	</head>
+	<body class="page1" id="top">
+<!--==============================header=================================-->
+		<header>
+			<div class="clear"></div>
+			<div class="container_12">
+				<div class="grid_12">
+					<h1>
+						<a href="index.html">
+							<img src="images/logo.png" alt="Projeto Beira Rio">
+						</a>
+					</h1>
+					<div class="menu_block">
+                        <!--<nav>-->
+                            <nav class="horizontal-nav full-width horizontalNav-notprocessed">
+                                <ul class="sf-menu">
+                                    <li class="current">
+                                        <a href="index.html">Home</a>
+                                        <!--<ul>
+                                            <li><a href="#">history</a></li>
+                                            <li><a href="#">offers</a></li>
+                                            <li>
+                                                <a href="#">news</a>
+                                                <ul>
+                                                    <li><a href="#">fresh </a></li>
+                                                    <li><a href="#">archive</a></li>
+                                                </ul>
+                                        </ul>-->
+                                    </li>
+                                    <li><a href="index-1.html">Videos </a></li>
+                                    <li><a href="index-2.html">O Projeto</a></li>
+                                    <li><a href="index-3.html">Voluntário </a></li>
+                                    <li><a href="index-4.html">Contato</a></li>
+                                </ul>
+                            </nav>
+                            <div class="clear"></div>
+                        <!--</nav>-->
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</header>
+		<div class="main">
+<!--==============================Content=================================-->
+			<div class="content"><div class="ic">More Website Templates @ TemplateMonster.com - December 16, 2013!</div>
+				<div class="container_12">
+					<div class="grid_8">
+						<div class="flexslider">
+							<ul class="slides">
+								<li>
+									<img src="images/page1_img1.jpg" alt="">
+									<div class="flex-caption">
+										<p>Você</p>
+									</div>
+								</li>
+								<li>
+									<img src="images/page1_img2.jpg" alt="">
+									<div class="flex-caption c2">
+										<p>Pode</p>
+									</div>
+								</li>
+								<li>
+									<img src="images/page1_img3.jpg" alt="">
+									<div class="flex-caption">
+										<p>Ajudar</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<span id="responsiveFlag"></span>
+					</div>
+					<div class="grid_4">
+                        <a href="index-2.html#VocePode" class="donate">Contribua</a>
+						<div class="text1">Nós podemos mudar a vida daqueles que não têm esperança</div>
+						<p>O trabalho voluntário é uma oportunidade para fazer amigos, viver novas experiências, conhecer outras realidades, desenvolver talentos e habilidades, ser solidário e cidadão. Uma contribuição para a construção de um mundo melhor.</p>
+                        Voluntário é o cidadão que, motivado pelos valores de participação e solidariedade, doa seu tempo, trabalho e talento, de maneira espontânea e não remunerada, para causas de interesse social e comunitário.
+					</div>
+					<div class="clear"></div>
+                    					<div class="grid_3">
+                                            <div class="block2 maxheight">
+                                                <div class="title">Agenda</div>
+                                                <div class="pad">
+                                                    <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=190&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=beirarioprojeto%40gmail.com&amp;color=%232952A3&amp;ctz=America%2FSao_Paulo" width="220" height="190" style=" border-width:0 " frameborder="0" scrolling="no"></iframe>
+                                                </div>
+                                                </div>
+                                            </div>
+                    <div class="grid_3">
+                        <div class="block2 maxheight">
+                            <div class="title">Nossa página</div>
+                            <div class="pad">
+                                <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FProjetoBeiraRio&amp;width=220&amp;height=190&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false" width="220" height="190" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe></div>
+                        </div>
+                    </div>
+
+                    <div class="grid_3">
+                        <div class="block2 maxheight">
+                            <div class="title">Há Vagas</div>
+                            <div class="pad">
+                                Você pode nos ajudar presencialmente ou pela internet.<div class="alright"><a href="index-3.html#PelaInternet" class="btn">Leia Mais</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid_3">
+                        <div class="block2 maxheight">
+                            <div class="title">Apoiadores</div>
+                            <div class="pad">Sua empresa pode nos ajudar a expandir nossas fronteiras. <div class="alright"><a href="index-4.html" class="btn">Leia Mais</a></div></div>
+                        </div>
+                    </div>
+                    
+
+					<!--<div class="grid_3">
+						<div class="block2 maxheight">
+							<div class="title">Nossa Missão</div>
+							<div class="pad">
+								Faert sit amet est l,mmodo venenatis eros. Kusce ng quam id risus sagittisnel consequat lacusut tinn sodales arcuisqum.<div class="alright"><a href="#" class="btn">Leia Mais</a></div>
+							</div>
+						</div>
+					</div>
+					<div class="grid_3">
+						<div class="block2 maxheight">
+							<div class="title">Últimos Projetos</div>
+							<div class="pad">
+								Keet sit amet est el,mmodo venenatis eros. Fusce ng quam id risus sagittisnel consequat lacusut tinn sodales arcuisque.<div class="alright"><a href="#" class="btn">Leia Mais</a></div>
+							</div>
+						</div>
+					</div>
+					<div class="grid_3">
+						<div class="block2 maxheight">
+							<div class="title">Participe</div>
+							<div class="pad">
+								Boetosit amet est el,mmodo venenatis eros. Musce ng quam id risus sagittisnel monsequat lacusut tinn
+								sodales arcuisqut <div class="alright"><a href="#" class="btn">Leia Mais</a></div>
+							</div>
+						</div>
+					</div>
+					<div class="grid_3">
+						<div class="block2 maxheight">
+							<div class="title">Blog</div>
+							<div class="pad">Holot sit amet est el,mmodo venenatis eros. Jolosceng huam id risus sagittisnel consequat 
+                        lacusut tinn sodales arcuisqmol.<div class="alright"><a href="#" class="btn">Leia Mais</a></div></div>
+						</div>
+					</div>-->
+					<div class="clear"></div>
+					<div class="grid_12">
+						<h2>Você pode ajudá-los</h2>
+						<div id="owl">
+							<div class="item">
+								<a href="index-2.html#VocePode"><img src="images/page1_img4.jpg" alt="">Kaka <br>
+								5 anos</a>
+							</div>
+							<div class="item it1">
+                                <a href="index-2.html#VocePode">
+                                    <img src="images/page1_img5.jpg" alt="">Suelen <br>
+                                    6 anos
+                                </a>
+							</div>
+							<div class="item it2">
+                                <a href="index-2.html#VocePode">
+                                    <img src="images/page1_img6.jpg" alt="">Bia <br>
+                                    11 anos
+                                </a>
+							</div>
+							<div class="item it3">
+                                <a href="index-2.html#VocePode">
+                                    <img src="images/page1_img7.jpg" alt="">Well  <br>
+                                    10 anos
+                                </a>
+							</div>
+							<div class="item">
+                                <a href="index-2.html#VocePode">
+                                    <img src="images/page1_img4.jpg" alt="">Kaka <br>
+                                    5 anos
+                                </a>
+							</div>
+							<div class="item it1">
+                                <a href="index-2.html#VocePode">
+                                    <img src="images/page1_img5.jpg" alt="">Suelen <br>
+                                    6 anos
+                                </a>
+							</div>
+							<div class="item it2">
+                                <a href="index-2.html#VocePode">
+                                    <img src="images/page1_img6.jpg" alt="">Bia <br>
+                                    11 anos
+                                </a>
+							</div>
+							<div class="item it3">
+                                <a href="index-2.html#VocePode">
+                                    <img src="images/page1_img7.jpg" alt="">Well  <br>
+                                    10 anos
+                                </a>
+							</div>
+						</div>
+					</div>
+					<div class="grid_4">
+						<h3 class="nowrap mb0">Histórias de sucesso</h3><br />
+						<!--<time class="st1" datetime="2013-01-01">29.11.2013</time>-->
+                        Artesanatos, games, gincanas, artes, músicas. Tudo isso contribui para muitas histórias de sucesso no nosso pequeno projeto.
+						<div class="alright"><a href="index-2.html#Historias" class="btn">Leia Mais</a></div>
+					</div>
+					<div class="grid_7 prefix_1">
+						<h3>Sobre Nós</h3>
+						<img src="images/page1_img8.jpg" alt="" class="img_inner fleft">
+						<div class="extra_wrapper">
+							<p>O Projeto Beira Rio é uma entidade sem fins lucrativos, em prol das crianças e adolescentes da Fazenda da Juta, Zona Leste - SP.</p>
+						</div>
+						<div class="clear"></div>
+						<div class="alright"><a href="index-2.html#SobreNos" class="btn">Leia Mais</a></div>
+					</div>
+				</div>
+			</div>
+<!--==============================footer=================================-->
+			<footer>
+				<div class="hor bg3"></div>
+				<div class="container_12">
+					<div class="grid_12 ">
+						<div class="socials">
+                            <a href="https://www.facebook.com/ProjetoBeiraRio"></a>
+                            <a href="https://twitter.com/ProjetoBeiraRio"></a>
+                            <a href="http://instagram.com/ProjetoBeiraRio"></a>
+							<div class="clear"></div>
+						</div>
+						<div class="copy">
+							<strong>Projeto Beira Rio</strong>   &copy; <span id="copyright-year"></span> | <a href="#">Politica de Privacidade</a><br>
+							Website designed by <a href="http://www.templatemonster.com/" rel="nofollow">TemplateMonster.com</a>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
